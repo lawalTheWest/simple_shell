@@ -12,13 +12,17 @@ It covers the `basics` of a Unix shell termed `Simple Shell`, including the foll
 
 1. Understanding the Basics:
 - Basics:
+
 	+ A shell reads commands from the user,
 	+ Interprets them, and
 	+ Executes the corresponding programs.
+
 It also handles features like:
+
 	+ input/output redirection,
 	+ piping, and
 	+ command history.
+
 The main goal is to create a simplified version of a shell that performs the essential functions of a shell.
 
 2. Command Line Input:
@@ -69,9 +73,11 @@ Building this simple Unix shell program provided a great opportunity to learn ab
 - User interaction
 in a Unix-like environment.
 `
-**********************************************************************************
+***********************************************************************************
 `
 All these are achieved By leveraging the allowed functions and understanding the principles of a shell.
 Creating a functional basic simple shell program for effective interaction with the operating system.
-
+`
+***********************************************************************************
+`
 <h6>ALX SE</h6>
