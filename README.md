@@ -17,7 +17,7 @@ It covers the `basics` of a Unix shell termed `Simple Shell`, including the foll
 	+ Interprets them, and
 	+ Executes the corresponding programs.
 
-It also handles features like:
+- It also handles features like:
 
 	+ input/output redirection,
 	+ piping, and
@@ -72,6 +72,7 @@ Building this simple Unix shell program provided a great opportunity to learn ab
 - Command execution, and
 - User interaction
 in a Unix-like environment.
+
 `
 ***********************************************************************************
 `
