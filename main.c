@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * exec_command - creates a child process and execute command
  * @exit_status: exit status
