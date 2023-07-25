@@ -8,7 +8,6 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 #include <sys/types.h>
-#include "main.h"
 
 /* define buffer */
 #define buffer 1024
