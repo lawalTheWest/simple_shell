@@ -10,6 +10,7 @@ It provides a convenient way to execute programs/ commands, run programs, and ma
 This READ ME write-up explores the process of building a simple Unix shell program using the C programming language.
 It covers the `basics` of a Unix shell termed `Simple Shell`, including the following:
 
+
 1. Understanding the Basics:
 - Basics:
 
@@ -25,11 +26,13 @@ It covers the `basics` of a Unix shell termed `Simple Shell`, including the foll
 
 The main goal is to create a simplified version of a shell that performs the essential functions of a shell.
 
+
 2. Command Line Input:
 - The first step:
 	+ Read commands entered by the user.
 		We can use the `getline()` function to read a line of input from the user, this depends on the allowed functions from the project requirements.
 	+ Next we can parse the command line to separate the command and its arguments.
+
 
 3. Executing Commands:
 - Once we have the command and its arguments, we can create a child process using `fork()`.
