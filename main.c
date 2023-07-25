@@ -121,7 +121,7 @@ int _ch(char **argv, char **tokens, char **fullpath, int *exit_status)
 		*exit_status = 127;
 		return (2);
 	} /* end if */
-	fullpath = tokens[0];
+	*fullpath = tokens[0];
 	if (access(tokens[0], X_OK) == -1)
 	{
 		*fullpath = _which(tokens[0], path);
@@ -149,7 +149,7 @@ int main(int argc __attribute__((unused)), char **argv)
 	char *line = NULL;
 	size_t length = 0;
 	char *tokens[buffer];
-	int cnt = 0, result;
+	int cnt, result;
 	char *fullpath;
 	int exit_status;
 
@@ -158,8 +158,7 @@ int main(int argc __attribute__((unused)), char **argv)
 		result = handle_prompt(&length, &line);
 		if (result == 1)
 			break; /* end  if */
-		else if (result == 2)
-			continue; /* end else if */
+		cnt = 0;
 		tokens[cnt] = strtok(line, " \t\n");
 		while (tokens[cnt] != NULL)
 		{
