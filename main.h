@@ -56,4 +56,10 @@ int _strncmp(char *str1, char *str2, int n);
 /* unset environment variable */
 int _unsetenv(char *name);
 
+/* Realloc implementation*/
+void *_realloc(void *ptr, size_t size);
+
+/*getline implementation*/
+ssize_t _getline(char **linePtr, size_t *buff_size, FILE *my_file);
+
 #endif
