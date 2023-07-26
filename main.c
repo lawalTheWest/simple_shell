@@ -110,6 +110,7 @@ int _ch(char **argv, char **tokens, char **fullpath, int *exit_status)
 {
 	char newline = '\n';
 	char *path = _getenv("PATH");
+	char *new_fullpath = NULL; /* this stores the new value of the fullpath */
 
 	if (path == NULL || *path == '\0')
 	{
@@ -121,11 +122,13 @@ int _ch(char **argv, char **tokens, char **fullpath, int *exit_status)
 		*exit_status = 127;
 		return (2);
 	} /* end if */
-	*fullpath = tokens[0];
+
+	new_fullpath = tokens[0];
 	if (access(tokens[0], X_OK) == -1)
 	{
-		*fullpath = _which(tokens[0], path);
-		if (access(*fullpath, X_OK) == -1)
+		new_fullpath = _which(tokens[0], path);
+		/* if (access(*fullpath, X_OK) == -1) */
+		if (new_fullpath == NULL)
 		{
 			write(STDERR_FILENO, argv[0], strlen(argv[0]));
 			write(STDERR_FILENO, ": 1: ", 5);
@@ -136,6 +139,14 @@ int _ch(char **argv, char **tokens, char **fullpath, int *exit_status)
 			return (2);
 		} /* end if */
 	} /* end if */
+	/* free previous fullpath if != new_fullpath */
+	if (*fullpath != new_fullpath)
+	{
+		free(*fullpath);
+	} /* end if */
+
+	*fullpath = new_fullpath;
+
 	return (0);
 }
 /**
