@@ -184,7 +184,7 @@ int main(int argc __attribute__((unused)), char **argv)
 		if (result == 1)
 			break; /* end if */
 		else if (result == 2)
-			continue; /* end if*/
+			continue; /*end if*/
 	} /* End while */
 	free(line);
 	return (exit_status);
