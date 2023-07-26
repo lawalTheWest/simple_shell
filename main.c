@@ -163,7 +163,7 @@ int main(int argc __attribute__((unused)), char **argv)
 	char *tokens[buffer];
 	int cnt, result;
 	char *fullpath;
-	int exit_status;
+	int exit_status = 0;
 
 	while (1)
 	{
