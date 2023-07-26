@@ -53,4 +53,7 @@ char *_getenv(char *name);
 /*compare n characters of strings*/
 int _strncmp(char *str1, char *str2, int n);
 
+/* unset environment variable */
+int _unsetenv(char *name);
+
 #endif
