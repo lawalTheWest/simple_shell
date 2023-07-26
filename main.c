@@ -95,6 +95,11 @@ int check_builtins(int cnt, char **tokens)
 		}
 		return (2);
 	}
+	if (strcmp(tokens[0], "unsetenv") == 0)
+	{
+		_unsetenv(tokens[1]);
+		return (2);
+	}
 	return (0);
 }
 
