@@ -71,7 +71,7 @@ int handle_prompt(size_t *length, char **line)
  * @tokens: list of shell arguments
  * Return: void
  */
-int check_builtins(int cnt, char **tokens)
+int check_builtins(int cnt, char **tokens, int *exit_status)
 {
 	char **env = environ;
 	char newline = '\n';
@@ -82,6 +82,10 @@ int check_builtins(int cnt, char **tokens)
 	}
 	if (strcmp(tokens[0], "exit") == 0)
 	{
+		if (tokens[1] != NULL)
+		{
+			*exit_status = _atoi(tokens[1]);
+		}
 		return (1);
 	}
 	if (strcmp(tokens[0], "env") == 0)
@@ -159,7 +163,7 @@ int main(int argc __attribute__((unused)), char **argv)
 	char *tokens[buffer];
 	int cnt, result;
 	char *fullpath;
-	int exit_status;
+	int exit_status = 0;
 
 	while (1)
 	{
@@ -175,7 +179,7 @@ int main(int argc __attribute__((unused)), char **argv)
 		} /* end while */
 		tokens[cnt] = NULL;
 		fullpath = tokens[0];
-		result = check_builtins(cnt, tokens);
+		result = check_builtins(cnt, tokens, &exit_status);
 		if (result == 1)
 			break; /* end if */
 		else if (result == 2)

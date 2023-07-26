@@ -42,7 +42,7 @@ int exec_command(int *exit_status, char *fullpath, char *tokens[]);
 int handle_prompt(size_t *length, char **line);
 
 /* check for builtins */
-int check_builtins(int cnt, char **tokens);
+int check_builtins(int cnt, char **tokens, int *exit_status);
 
 /* check if file is executable */
 int _ch(char **argv, char **tokens, char **fullpath, int *exit_status);
@@ -61,5 +61,8 @@ void *_realloc(void *ptr, size_t size);
 
 /*getline implementation*/
 ssize_t _getline(char **linePtr, size_t *buff_size, FILE *my_file);
+
+/* convert string to integer */
+int _atoi(char *str);
 
 #endif
