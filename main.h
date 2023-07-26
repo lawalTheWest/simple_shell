@@ -47,5 +47,10 @@ int check_builtins(int cnt, char **tokens);
 /* check if file is executable */
 int _ch(char **argv, char **tokens, char **fullpath, int *exit_status);
 
+/* get an environment variable*/
+char *_getenv(char *name);
+
+/*compare n characters of strings*/
+int _strncmp(char *str1, char *str2, int n);
 
 #endif

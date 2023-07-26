@@ -109,7 +109,7 @@ int check_builtins(int cnt, char **tokens)
 int _ch(char **argv, char **tokens, char **fullpath, int *exit_status)
 {
 	char newline = '\n';
-	char *path = getenv("PATH");
+	char *path = _getenv("PATH");
 
 	if (path == NULL || *path == '\0')
 	{

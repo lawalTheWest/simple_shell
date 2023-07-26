@@ -63,3 +63,44 @@ char *_which(char *filename, char *path)
 	free(path_cpy);
 	return (NULL);
 } /* end function */
+
+/**
+ * _strncmp - compare n character of str1 and str2
+ * @str1: string 1
+ * @str2: string 2
+ * @n: number of characters
+ * Return: 0 on success
+ */
+int _strncmp(char *str1, char *str2, int n)
+{
+	int i = 0;
+
+	while (i < n)
+	{
+		if (str1[i] != str2[i])
+		return (-1);
+		i++;
+	}
+	return (0);
+}
+
+/**
+ * _getenv - get an environment variable given name
+ * @name: name of environment variable
+ * Return: environment variable value on success
+ */
+char *_getenv(char *name)
+{
+	int namelen = _strlen(name);
+	int i;
+
+	for (i = 0; environ[i] != NULL; i++)
+	{
+		if (_strncmp(name, environ[i], namelen) == 0 && environ[i][namelen] == '=')
+		{
+			return (environ[i] + namelen + 1);
+		}
+	}
+
+	return (NULL);
+}
