@@ -70,6 +70,7 @@ int handle_prompt(size_t *length, char **line)
  * @cnt: number of arguments passed in shell
  * @tokens: list of shell arguments
  * @argv: command line arguments array
+ * @exit_status: exit status
  * Return: void
  */
 int check_builtins(int cnt, char **tokens, int *exit_status, char **argv)
