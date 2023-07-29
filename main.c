@@ -69,9 +69,10 @@ int handle_prompt(size_t *length, char **line)
  * check_builtins - check for builtins
  * @cnt: number of arguments passed in shell
  * @tokens: list of shell arguments
+ * @argv: command line arguments array
  * Return: void
  */
-int check_builtins(int cnt, char **tokens, int *exit_status)
+int check_builtins(int cnt, char **tokens, int *exit_status, char **argv)
 {
 	char **env = environ;
 	char newline = '\n';
@@ -84,7 +85,15 @@ int check_builtins(int cnt, char **tokens, int *exit_status)
 	{
 		if (tokens[1] != NULL)
 		{
-			*exit_status = _atoi(tokens[1]);
+			if (atoi(tokens[1]))
+				if (atoi(tokens[1]) >= 0)
+					*exit_status = _atoi(tokens[1]);
+				else
+					error_message(tokens, argv, exit_status);
+			else
+			{
+				error_message(tokens, argv, exit_status);
+			}
 		}
 		return (1);
 	}
@@ -179,7 +188,7 @@ int main(int argc __attribute__((unused)), char **argv)
 		} /* end while */
 		tokens[cnt] = NULL;
 		fullpath = tokens[0];
-		result = check_builtins(cnt, tokens, &exit_status);
+		result = check_builtins(cnt, tokens, &exit_status, argv);
 		if (result == 1)
 			break; /* end if */
 		else if (result == 2)
