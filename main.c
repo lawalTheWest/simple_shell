@@ -67,6 +67,7 @@ int handle_prompt(size_t *length, char **line)
 
 /**
  * check_builtins - check for builtins
+ *
  * @cnt: number of arguments passed in shell
  * @tokens: list of shell arguments
  * @argv: command line arguments array

@@ -16,7 +16,7 @@ void *_realloc(void *ptr, size_t size)
 	char *next_ptr;
 	char *new_next_ptr;
 	size_t dup_size;
-	size_t index; /* counter */
+	size_t index = 0; /* counter */
 
 	if (size == 0)
 	{
