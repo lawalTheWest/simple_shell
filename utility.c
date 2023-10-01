@@ -1,4 +1,6 @@
 #include "main.h"
+
+
 /**
  * _atoi - convert string to integer
  * @str: given string
@@ -14,7 +16,7 @@ int _atoi(char *str)
 	{
 		is_positive = -1;
 		i = 1;
-	}
+	} /* End if */
 
 	while (str[i] != '\0')
 	{
@@ -22,11 +24,11 @@ int _atoi(char *str)
 		{
 			result = result * 10 + (str[i] - '0');
 			i++;
-		}
+		} /* end if */
 		else
 		{
 			break;
-		}
-	}
+		} /* end else */
+	} /* end while */
 	return (is_positive * result);
-}
+} /* ens function */
