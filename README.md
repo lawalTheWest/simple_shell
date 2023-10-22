@@ -69,6 +69,13 @@ We can decide to use a loop to repeat the processes:
 	- Displaying the prompt
 	until the user chooses to exit.(EOF)
 
+8. How to use:
+   ```
+   $
+   $
+   $
+   ```
+
 Conclusion:
 Building this simple Unix shell program provided a great opportunity to learn about:
 - Process management,
