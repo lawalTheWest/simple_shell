@@ -86,9 +86,4 @@ in a Unix-like environment.
 `
 ***********************************************************************************
 `
-All these are achieved By leveraging the allowed functions and understanding the principles of a shell.
-Creating a functional basic simple shell program for effective interaction with the operating system.
-`
-***********************************************************************************
-`
 <h6>ALX SE</h6>
